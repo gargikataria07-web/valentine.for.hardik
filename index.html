@@ -1,198 +1,173 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>For Hardik 💘</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>For Hardik 💖</title>
 
-<style>
-body {
-  margin: 0;
-  height: 100vh;
-  background: linear-gradient(180deg, #ffd6e8, #fff);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-family: 'Comic Sans MS', 'Poppins', cursive;
-  overflow: hidden;
-}
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background: linear-gradient(180deg, #ffd6e8, #fff);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Poppins', 'Comic Sans MS', cursive;
+      overflow: hidden;
+      text-align: center;
+    }
 
-/* Floating hearts */
-.hearts {
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-}
-.heart {
-  position: absolute;
-  animation: float 6s infinite ease-in;
-  opacity: 0.7;
-}
-@keyframes float {
-  0% { transform: translateY(100vh) scale(0.5); }
-  100% { transform: translateY(-10vh) scale(1.3); }
-}
+    .container {
+      background: rgba(255,255,255,0.85);
+      padding: 30px 20px;
+      border-radius: 25px;
+      box-shadow: 0 15px 40px rgba(255, 105, 180, 0.4);
+      max-width: 90%;
+    }
 
-/* Card */
-.container {
-  background: white;
-  padding: 30px 20px 40px;
-  border-radius: 25px;
-  box-shadow: 0 15px 35px rgba(255,0,100,0.25);
-  text-align: center;
-  width: 90%;
-  max-width: 350px;
-  position: relative;
-}
+    h1 {
+      color: #ff4d88;
+      font-size: 2.2rem;
+      margin-bottom: 10px;
+    }
 
-/* Hardik pulse */
-.name {
-  font-size: 28px;
-  color: #ff2f92;
-  animation: pulse 1.5s infinite;
-}
-@keyframes pulse {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.1); }
-  100% { transform: scale(1); }
-}
+    p {
+      color: #ff6699;
+      font-size: 1.1rem;
+      margin-bottom: 20px;
+    }
 
-h2 {
-  color: #ff5cab;
-  margin-bottom: 20px;
-}
+    .buttons {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      margin-top: 20px;
+      position: relative;
+    }
 
-/* Buttons */
-.buttons {
-  position: relative;
-  height: 140px;
-}
-button {
-  border: none;
-  padding: 14px 24px;
-  border-radius: 30px;
-  font-size: 18px;
-  cursor: pointer;
-  transition: 0.2s ease;
-}
-#yesBtn {
-  background: #ff2f92;
-  color: white;
-}
-#yesBtn:hover {
-  background: #ff5cab;
-  transform: scale(1.15);
-}
-#noBtn {
-  background: #ffd1e8;
-  color: #ff2f92;
-  position: absolute;
-}
+    button {
+      padding: 14px 28px;
+      font-size: 1.1rem;
+      border-radius: 30px;
+      border: none;
+      cursor: pointer;
+      transition: 0.3s;
+    }
 
-/* Popup */
-.popup {
-  display: none;
-  position: fixed;
-  inset: 0;
-  background: rgba(255,182,213,0.96);
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  z-index: 10;
-}
-.popup-box {
-  background: white;
-  padding: 35px;
-  border-radius: 30px;
-  animation: pop 0.4s ease;
-}
-@keyframes pop {
-  from { transform: scale(0.4); opacity: 0; }
-  to { transform: scale(1); opacity: 1; }
-}
-.popup h2 {
-  color: #ff2f92;
-}
-.popup p {
-  font-size: 20px;
-}
+    #yes {
+      background: #ff4d88;
+      color: white;
+      box-shadow: 0 10px 20px rgba(255, 77, 136, 0.5);
+    }
 
-/* Footer */
-.footer {
-  position: absolute;
-  bottom: 10px;
-  width: 100%;
-  font-size: 14px;
-  color: #ff8fbf;
-}
-</style>
+    #yes:hover {
+      transform: scale(1.1);
+    }
+
+    #no {
+      background: #ffd6e8;
+      color: #ff4d88;
+      position: absolute;
+    }
+
+    .popup {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(255, 182, 193, 0.95);
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      padding: 30px;
+      z-index: 10;
+    }
+
+    .popup h2 {
+      color: #fff;
+      font-size: 2rem;
+      margin-bottom: 15px;
+    }
+
+    .popup p {
+      color: #fff;
+      font-size: 1.2rem;
+    }
+
+    .heart {
+      position: fixed;
+      bottom: -20px;
+      font-size: 20px;
+      animation: float 6s linear infinite;
+    }
+
+    @keyframes float {
+      from {
+        transform: translateY(0);
+        opacity: 1;
+      }
+      to {
+        transform: translateY(-110vh);
+        opacity: 0;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<div class="hearts" id="hearts"></div>
+  <div class="container">
+    <h1>Hardik 💕</h1>
+    <p>
+      I have something very important to ask you…<br>
+      You make my days brighter, my laughs louder,<br>
+      and my heart very very happy 🥹💖
+    </p>
 
-<div class="container">
-  <div class="name">Hardik 💖</div>
-  <h2>Will you be my Valentine?</h2>
+    <h2 style="color:#ff4d88;">Will you be my Valentine? 😘🌹</h2>
 
-  <div class="buttons">
-    <button id="yesBtn">Yes 💕</button>
-    <button id="noBtn">No 🙈</button>
+    <div class="buttons">
+      <button id="yes">YES 💖</button>
+      <button id="no">NO 🙈</button>
+    </div>
   </div>
 
-  <div class="footer">From Gargi 💗</div>
-</div>
-
-<div class="popup" id="popup">
-  <div class="popup-box">
-    <h2>I knowww 😌💘</h2>
-    <p>hahaha I will always love you, Hardik 💋💞</p>
+  <div class="popup" id="popup">
+    <h2>I knooowww 😭💘</h2>
+    <p>
+      hahaha I will always love you 🥹💖<br>
+      Forever stuck with me 😘💋<br><br>
+      Happy Valentine’s Day, Hardik 🌹💕
+    </p>
   </div>
-</div>
 
-<!-- Sounds -->
-<audio id="kissSound" src="https://assets.mixkit.co/sfx/preview/mixkit-kiss-quick-366.mp3"></audio>
+  <script>
+    const noBtn = document.getElementById("no");
+    const yesBtn = document.getElementById("yes");
+    const popup = document.getElementById("popup");
 
-<script>
-/* Hearts */
-for (let i = 0; i < 35; i++) {
-  const h = document.createElement("div");
-  h.className = "heart";
-  h.innerHTML = Math.random() > 0.5 ? "💖" : "💋";
-  h.style.left = Math.random() * 100 + "vw";
-  h.style.fontSize = 16 + Math.random() * 24 + "px";
-  h.style.animationDuration = 4 + Math.random() * 4 + "s";
-  document.getElementById("hearts").appendChild(h);
-}
+    noBtn.addEventListener("mouseover", () => {
+      const x = Math.random() * (window.innerWidth - 100);
+      const y = Math.random() * (window.innerHeight - 100);
+      noBtn.style.left = x + "px";
+      noBtn.style.top = y + "px";
+    });
 
-/* No button chaos */
-const noBtn = document.getElementById("noBtn");
-let speed = 200;
-noBtn.addEventListener("click", () => {
-  const x = Math.random() * speed - speed/2;
-  const y = Math.random() * speed - speed/2;
-  noBtn.style.transform = `translate(${x}px, ${y}px)`;
-  speed += 60;
-});
+    yesBtn.addEventListener("click", () => {
+      popup.style.display = "flex";
+    });
 
-/* Yes action */
-document.getElementById("yesBtn").addEventListener("click", () => {
-  document.getElementById("popup").style.display = "flex";
-  document.getElementById("kissSound").play();
-
-  for (let i = 0; i < 30; i++) {
-    const c = document.createElement("div");
-    c.innerHTML = "🎉💖";
-    c.style.position = "fixed";
-    c.style.left = Math.random() * 100 + "vw";
-    c.style.top = Math.random() * 100 + "vh";
-    c.style.fontSize = "24px";
-    document.body.appendChild(c);
-    setTimeout(() => c.remove(), 1500);
-  }
-});
-</script>
+    // floating hearts
+    setInterval(() => {
+      const heart = document.createElement("div");
+      heart.classList.add("heart");
+      heart.innerHTML = Math.random() > 0.5 ? "💖" : "💋";
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.animationDuration = 4 + Math.random() * 3 + "s";
+      document.body.appendChild(heart);
+      setTimeout(() => heart.remove(), 7000);
+    }, 300);
+  </script>
 
 </body>
 </html>
